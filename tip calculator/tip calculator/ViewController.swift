@@ -25,6 +25,18 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func darkMode(_ sender: Any) {
+        
+        if(overrideUserInterfaceStyle == .dark){
+            overrideUserInterfaceStyle = .light
+        }
+        else{
+            overrideUserInterfaceStyle = .dark
+
+        }
+    }
+
+    
     @IBAction func calculateTip(_ sender: Any) {
         let bill = Double(billAmountTextField.text!) ?? 0
         
@@ -35,7 +47,6 @@ class ViewController: UIViewController {
         
         tipPercentageLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
-
 
     }
 }
